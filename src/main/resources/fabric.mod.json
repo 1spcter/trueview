@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "trueview",
+  "version": "${version}",
+  "name": "TrueView",
+  "description": "Advanced first-person camera overhaul for Minecraft 1.26.3 (Fabric).",
+  "authors": ["TrueView Team"],
+  "contact": {
+    "homepage": "https://example.com/trueview",
+    "sources": "https://example.com/trueview/source"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.trueview.TrueViewClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.20.0",
+    "fabric": "*"
+  },
+  "mixins": [
+    "trueview.mixins.json"
+  ]
+}

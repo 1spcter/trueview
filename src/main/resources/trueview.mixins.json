@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.trueview.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "FirstPersonRendererMixin",
+    "GameRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
