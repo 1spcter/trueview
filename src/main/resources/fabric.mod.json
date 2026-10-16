@@ -17,8 +17,8 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=0.20.0",
-    "fabric": "*"
+    "fabricloader": ">=0.19.5",
+    "fabric": ">=0.163.0+26.3"
   },
   "mixins": [
     "trueview.mixins.json"
