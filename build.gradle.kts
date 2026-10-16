@@ -1,8 +1,6 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    id("fabric-loom") version "1.2.12"
     java
+    id("net.fabricmc.loom") version "1.17"
 }
 
 group = "com.trueview"
@@ -11,7 +9,6 @@ val minecraftVersion = "1.26.3"
 
 repositories {
     mavenCentral()
-    maven("https://maven.fabricmc.net/")
 }
 
 dependencies {
@@ -34,5 +31,8 @@ tasks.test {
 }
 
 loom {
-    log4j2.disablePlugin()
+    javaVersion.set(21)
+    mixin {
+        defaultRefmapName.set("trueview.refmap.json")
+    }
 }
