@@ -1,6 +1,6 @@
 plugins {
-    java
     id("net.fabricmc.loom") version "1.17"
+    java
 }
 
 group = "com.trueview"
@@ -12,10 +12,11 @@ repositories {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:$minecraftVersion")
-    mappings("net.fabricmc:yarn:$minecraftVersion+build.1:v2")
-    modImplementation("net.fabricmc:fabric-loader:0.20.0")
-    modImplementation("net.fabricmc.fabric-api:fabric-api:0.95.0+1.26.3")
+    // Use add(...) to avoid Kotlin DSL unresolved reference issues when plugin provides configuration names
+    add("minecraft", "com.mojang:minecraft:$minecraftVersion")
+    add("mappings", "net.fabricmc:yarn:$minecraftVersion+build.1:v2")
+    add("modImplementation", "net.fabricmc:fabric-loader:0.20.0")
+    add("modImplementation", "net.fabricmc.fabric-api:fabric-api:0.95.0+1.26.3")
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
 }
 
@@ -31,7 +32,6 @@ tasks.test {
 }
 
 loom {
-    javaVersion.set(21)
     mixin {
         defaultRefmapName.set("trueview.refmap.json")
     }
